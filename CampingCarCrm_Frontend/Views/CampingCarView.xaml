@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="CampingCarCrm_Frontend.Views.CampingCarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800"
+             Loaded="UserControl_Loaded" Background="White">
+    <Grid>
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Right" Width="250" Margin="10">
+                <TextBlock Text="차량 번호:" FontWeight="Bold"/>
+                <TextBox x:Name="CarNumberTextBox" Margin="0,0,0,10"/>
+                <TextBlock Text="차량 모델:" FontWeight="Bold"/>
+                <TextBox x:Name="CarModelTextBox" Margin="0,0,0,10"/>
+                <TextBlock Text="차량 별명:" FontWeight="Bold"/>
+                <TextBox x:Name="CarNicknameTextBox" Margin="0,0,0,10"/>
+                <TextBlock Text="차량 상태:" FontWeight="Bold"/>
+                <TextBox x:Name="CarStatusTextBox" Margin="0,0,0,20"/>
+                <Button Content="신규 차량 추가" Margin="0,0,0,10" Click="AddCarButton_Click" Background="#4CAF50" Foreground="White"/>
+                <Button Content="선택 차량 수정" Margin="0,0,0,10" Click="UpdateCarButton_Click" Background="#FFC107" Foreground="White"/>
+                <Button Content="선택 차량 삭제" Margin="0,0,0,10" Click="DeleteCarButton_Click" Background="#F44336" Foreground="White"/>
+            </StackPanel>
+            <DataGrid x:Name="CampingCarDataGrid" FlowDirection="LeftToRight" AutoGenerateColumns="False" Margin="10" IsReadOnly="True" SelectionChanged="CampingCarDataGrid_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding CarID}" Width="50"/>
+                    <DataGridTextColumn Header="차량 번호" Binding="{Binding CarNumber}" Width="*"/>
+                    <DataGridTextColumn Header="차량 모델" Binding="{Binding CarModel}" Width="*"/>
+                    <DataGridTextColumn Header="차량 별명" Binding="{Binding CarNickname}" Width="*"/>
+                    <DataGridTextColumn Header="차량 상태" Binding="{Binding CarStatus}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+    </Grid>
+</UserControl>

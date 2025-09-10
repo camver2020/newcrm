@@ -1,0 +1,17 @@
+﻿<Window x:Class="CampingCarCrm_Frontend.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="캠핑카 CRM" Height="650" Width="900">
+    <DockPanel>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="10" Background="#F0F0F0">
+            <Button Content="예약 관리" Width="100" Margin="5" Click="ShowReservationView_Click" FontWeight="Bold"/>
+            <Button Content="회원 관리" Width="100" Margin="5" Click="ShowMemberView_Click"/>
+            <Button Content="캠핑카 관리" Width="100" Margin="5" Click="ShowCampingCarView_Click"/>
+            <Button Content="기초 정보 관리" Width="120" Margin="20,5,5,5" Click="ShowSettingsView_Click"/>
+        </StackPanel>
+        <ContentControl x:Name="MainContent" Margin="10"/>
+    </DockPanel>
+</Window>

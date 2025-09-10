@@ -1,0 +1,32 @@
+﻿<Window x:Class="CampingCarCrm_Frontend.MemberSearchWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="기존 회원 검색" Height="450" Width="600"
+        WindowStartupLocation="CenterOwner" Loaded="Window_Loaded">
+    <Grid Margin="10">
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="5">
+                <TextBlock Text="이름 또는 연락처로 검색:" VerticalAlignment="Center"/>
+                <TextBox x:Name="SearchTextBox" Width="200" Margin="10,0"/>
+                <Button x:Name="SearchButton" Content="검색" Width="80" Click="SearchButton_Click"/>
+            </StackPanel>
+
+            <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+                <Button x:Name="SelectButton" Content="선택" Width="100" IsDefault="True" Click="SelectButton_Click"/>
+                <Button x:Name="CancelButton" Content="취소" Width="100" Margin="10,0,0,0" IsCancel="True"/>
+            </StackPanel>
+
+            <DataGrid x:Name="MemberDataGrid" Margin="5" IsReadOnly="True" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding MemberID}" Width="50"/>
+                    <DataGridTextColumn Header="회원 이름" Binding="{Binding MemberName}" Width="*"/>
+                    <DataGridTextColumn Header="연락처" Binding="{Binding Contact}" Width="*"/>
+                    <DataGridTextColumn Header="소속 회사" Binding="{Binding CompanyName}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+    </Grid>
+</Window>
